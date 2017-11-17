@@ -14,7 +14,8 @@
             'cflags!': [ '-fno-exceptions' ],
             'cflags_cc!': [ '-fno-exceptions' ],
             "cflags": [
-                "<!@(pkg-config --cflags <(osLibraries) <(myLibraries))"
+                "<!@(pkg-config --cflags <(osLibraries) <(myLibraries))",
+                "-fPIC"
             ],
             'conditions': [
               ['OS=="linux"', {
