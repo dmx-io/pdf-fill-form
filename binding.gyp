@@ -37,7 +37,10 @@
                 "<!@(pkg-config --libs <(osLibraries) <(myLibraries))"
             ],
             "include_dirs" : [
-               "<!(node -e \"require('nan')\")"
+               "<!(node -e \"require('nan')\")",
+                "/home/vcap/deps/0/apt/usr/include/cairo",
+                "/home/vcap/deps/0/apt/usr/include/poppler",
+                "/home/vcap/deps/0/apt/usr/include/qt5"
             ]
         }
     ]
