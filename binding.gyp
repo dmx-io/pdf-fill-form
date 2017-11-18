@@ -15,7 +15,14 @@
             'cflags_cc!': [ '-fno-exceptions' ],
             "cflags": [
                 "<!@(pkg-config --cflags <(osLibraries) <(myLibraries))",
-                "-fPIC"
+                "-I$DEPS_DIR/0/include/cairo",
+                "-I$DEPS_DIR/0/apt/usr/include/cairo",
+                "-I$DEPS_DIR/0/include/poppler",
+                "-I$DEPS_DIR/0/apt/usr/include/poppler",
+                "-I$DEPS_DIR/0/include/qt5",
+                "-I$DEPS_DIR/0/apt/usr/include/qt5",
+                "-L$DEPS_DIR/0/lib",
+                "-L$DEPS_DIR/0/apt/usr/lib",
             ],
             'conditions': [
               ['OS=="linux"', {
@@ -38,9 +45,6 @@
             ],
             "include_dirs" : [
                "<!(node -e \"require('nan')\")",
-                "/home/vcap/deps/0/apt/usr/include/cairo",
-                "/home/vcap/deps/0/apt/usr/include/poppler",
-                "/home/vcap/deps/0/apt/usr/include/qt5"
             ]
         }
     ]
